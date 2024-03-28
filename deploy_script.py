@@ -61,7 +61,7 @@ def get_gpu_count(instance_type):
 
 def deploy_sagemaker_endpoint(s3_uri, instance_type, region, execution_role=None):
     """
-    Deploys a HuggingFace Large Language Model (LLM) to AWS SageMaker.
+    Deploys a HuggingFace Large Language Model (LLM) to Amazon SageMaker.
 
     This function automates the process of deploying a HuggingFace model on SageMaker. It uses the model data stored in an S3 bucket, specified by the s3_uri parameter. The deployment utilizes a specified instance type and targets the specified AWS region.
 
@@ -361,12 +361,12 @@ def create_api_gateway_for_lambda(lambda_function_name, region):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Deploy a model to AWS SageMaker with optional streaming support. If streaming is not enabled, deploys a Lambda function, also sets up API Gateway."
+        description="Deploy a model to Amazon SageMaker with optional streaming support. If streaming is not enabled, deploys a Lambda function, also sets up API Gateway."
     )
     parser.add_argument(
         "--enable-stream",
         action="store_true",
-        help="Enable streaming (deploys Lambda only)",
+        help="Enable streaming (deploys SageMaker Endpoint only)",
     )
     parser.add_argument("--s3-uri", type=str, required=True, help="S3 URI of the model")
     parser.add_argument(

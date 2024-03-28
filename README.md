@@ -1,6 +1,6 @@
 # sagemaker-deploy-llms
 
-AWS SageMaker를 이용하여 HuggingFace의 Large Language Models(LLMs)을 배포하고, 선택적으로 Lambda 함수와 API Gateway를 배포하는 프로젝트입니다.
+Amazon SageMaker를 이용하여 HuggingFace의 Large Language Models(LLMs)을 배포하고, 선택적으로 Lambda 함수와 API Gateway를 배포하는 프로젝트입니다.
 
 ## 프로젝트 구성
 
@@ -20,7 +20,7 @@ AWS SageMaker를 이용하여 HuggingFace의 Large Language Models(LLMs)을 배�
 스크립트는 다음과 같은 명령줄 인자를 받습니다:
 
 - `--s3-uri <model_uri>`: 배포할 HuggingFace 모델의 S3 URI입니다. (필수)
-- `--enable-stream`: 스트리밍 기능을 활성화합니다. 이 옵션을 사용하면 Lambda만 배포됩니다.
+- `--enable-stream`: 스트리밍 기능을 활성화합니다. 이 옵션을 사용하면 SageMaker Endpoint만 배포됩니다.
 - `--instance-type`: SageMaker 엔드포인트에 사용할 인스턴스 유형입니다. 기본값은 `ml.g5.12xlarge`입니다.
 - `--region`: AWS 리전을 지정합니다. 기본값은 `us-east-1`입니다.
 - `--execution-role`: The AWS IAM execution role for SageMaker.
